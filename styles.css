@@ -9,4 +9,11 @@
 .board div {
     height: 20px;
     width: 20px;
+    /* background-color: blue; */
+    font-size: xx-small;
+    text-align: center;
+}
+
+.bomb {
+    background-color: red;
 }
