@@ -19,12 +19,89 @@
     font-size: medium;
     text-align: center;
 
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Oswald', sans-serif;
+    /* font-family: 'Anton', sans-serif; */
+    font-weight:700;
     display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #7c7c7c;
 }
+
+/* .header {
+  font-family: 'Orbitron', sans-serif;
+
+  height: 40px;
+    width: 1000px;
+
+    text-align: center;
+    align-items: center;
+
+    display:flex;
+
+    background-color: #b4b4b4;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 0.5em;
+    font-size: 2em;
+    font-weight: bold;
+    align-content: center;
+    
+} */
+
+.continer {
+  width: 970px;
+  border: 5px solid rgb(111,41,97);
+  border-radius: .5em;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timer {
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  background-color: rgba(111,41,97,.3);
+  border: 2px solid rgba(111,41,97,.5);
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+
+}
+
+
+.flags {
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  background-color: rgba(111,41,97,.3);
+  border: 2px solid rgba(111,41,97,.5);
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+
+}
+
+
+.reset {
+  width: 100px;
+  height: 40px;
+  /* padding: 10px; */
+  /* background-color: rgba(111,41,97,.3);
+  border: 2px solid rgba(111,41,97,.5); */
+  text-align: center;
+  /* font-family: 'Orbitron', sans-serif; */
+  font-size: 1em;
+
+}
+
+
+
 
 .bomb {
   background-color: #bababa;

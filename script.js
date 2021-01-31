@@ -19,28 +19,26 @@ for (let i=0; i<totalCells; i++){
     board.appendChild (cell);
     // cell.innerHTML = i;
     cells.push (i);
-    cell.classList.add(".one");
+    cell.classList.add("one");
+
+
 
 
 
     cell.addEventListener ("click", function(e){
-        click (cell);
+        clickR (cell);
 })
     
 }
 
 
-function click (cell){
+function clickR (sq){
     console.log("click!");
-    cell.innerHTML = '&#128163;';
-    cell.classList.add ("one");
-    cell.classList.remove ("cell");
-    let reza = cell.id;
-    console.log(reza);
-    
+    sq.innerHTML = '&#128163;';
 }
 
 
+console.log("fffffffff",cell);
 
 
 // for (let i=0; i<bombsAmount; i++){
@@ -131,26 +129,33 @@ console.log (bottomSideArray);
 
 
 
+
+
 // check the 8 adjcent neighbours of each cell
 function checkNeighbours(){
 
     for (let i=0; i<totalCells ; i++){
+        if (bombs.includes(i)){
 
-        let bNumber = 0;
+            
 
-        if (bombs.includes(i)){   
-
-            const cell = document.getElementById(i);
+            cell = document.getElementById(i);
             cell.classList.add (".bomb");
             
             
+                        
+           
+
+
         }else{
 
             // compare with 3 neighbours
             if (cornerArray.includes(cells[i])){
-
+                // console.log(cells[i]);
                 if (i == cornerArray[0]){
+                    console.log(cells[i]);
 
+                    let bNumber = 0;
                     if ( bombs.includes(i+1)){
                         bNumber ++;
                     }if (bombs.includes(i+width)){
@@ -159,42 +164,57 @@ function checkNeighbours(){
                         bNumber ++;
                     }
 
+                    const cell = document.getElementById(i);
+                    cell.innerHTML = bNumber;
+                    addNumberStyle(bNumber);
+                    
 
                 }else if (i == cornerArray[1] ){
                     // console.log(cells[i]);
 
-                    if ( bombs.includes(i-1)){
-                        bNumber ++;
-                    } if (bombs.includes(i+width)){
-                        bNumber ++;
-                    } if (bombs.includes(i+width-1)){
-                        bNumber ++;
-                    }
+                    let bNumber = 0;
+                        if ( bombs.includes(i-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width-1)){
+                            bNumber ++;
+                        }
+                        const cell = document.getElementById(i);
+                        cell.innerHTML = bNumber;
+                        addNumberStyle(bNumber);
 
                 }else if (i == cornerArray[2] ){
                     // console.log(cells[i]);
 
-                    if ( bombs.includes(i-width)){
-                        bNumber ++;
-                    } if (bombs.includes(i-width+1)){
-                        bNumber ++;
-                    } if (bombs.includes(i+1)){
-                        bNumber ++;
-                    }
-
+                    let bNumber = 0;
+                        if ( bombs.includes(i-width)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width+1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+1)){
+                            bNumber ++;
+                        }
+                        const cell = document.getElementById(i);
+                        cell.innerHTML = bNumber;
+                        addNumberStyle(bNumber);
 
 
                 }else if (i == cornerArray[3] ){
                     // console.log(cells[i]);
 
 
-                    if ( bombs.includes(i-1)){
-                        bNumber ++;
-                    } if (bombs.includes(i-width)){
-                        bNumber ++;
-                    } if (bombs.includes(i-width-1)){
-                        bNumber ++;
-                    }
+                    let bNumber = 0;
+                        if ( bombs.includes(i-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width-1)){
+                            bNumber ++;
+                        }
+                        const cell = document.getElementById(i);
+                        cell.innerHTML = bNumber;
+                        addNumberStyle(bNumber);
 
                 }
 
@@ -202,101 +222,122 @@ function checkNeighbours(){
             }else if (leftSideArray.includes(cells[i])){
                 // console.log(cells[i]);
 
-                if ( bombs.includes(i-width)){
-                    bNumber ++;
-                } if (bombs.includes(i-width+1)){
-                    bNumber ++;
-                } if (bombs.includes(i+1)){
-                    bNumber ++;
-                } if (bombs.includes(i+width)){
-                    bNumber ++;
-                } if (bombs.includes(i+width+1)){
-                    bNumber ++;
-                }
 
+                let bNumber = 0;
+                        if ( bombs.includes(i-width)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width+1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width+1)){
+                            bNumber ++;
+                        }
+
+                        const cell = document.getElementById(i);
+                        cell.innerHTML = bNumber;
+                        addNumberStyle(bNumber);
 
             // compare with 5 neighbours
             }else if (rightSideArray.includes(cells[i])){
                 // console.log(cells[i]);
 
-                if ( bombs.includes(i-width)){
-                    bNumber ++;
-                } if (bombs.includes(i-width-1)){
-                    bNumber ++;
-                } if (bombs.includes(i-1)){
-                    bNumber ++;
-                } if (bombs.includes(i+width)){
-                    bNumber ++;
-                } if (bombs.includes(i+width-1)){
-                    bNumber ++;
-                }
 
+                let bNumber = 0;
+                        if ( bombs.includes(i-width)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width-1)){
+                            bNumber ++;
+                        }
+
+                        const cell = document.getElementById(i);
+                        cell.innerHTML = bNumber;
+                        addNumberStyle(bNumber);
 
             // compare with 5 neighbours
             }else if (topSideArray.includes(cells[i])){
                 // console.log(cells[i]);
 
-                if ( bombs.includes(i-1)){
-                    bNumber ++;
-                } if (bombs.includes(i+width-1)){
-                    bNumber ++;
-                } if (bombs.includes(i+width)){
-                    bNumber ++;
-                } if (bombs.includes(i+width+1)){
-                    bNumber ++;
-                } if (bombs.includes(i+1)){
-                    bNumber ++;
-                }
 
+                let bNumber = 0;
+                        if ( bombs.includes(i-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width+1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+1)){
+                            bNumber ++;
+                        }
+
+                        const cell = document.getElementById(i);
+                        cell.innerHTML = bNumber;
+                        addNumberStyle(bNumber);
 
             // compare with 5 neighbours
             }else if (bottomSideArray.includes(cells[i])){
                 // console.log(cells[i]);
 
-                if ( bombs.includes(i-1)){
-                    bNumber ++;
-                } if (bombs.includes(i-width-1)){
-                    bNumber ++;
-                } if (bombs.includes(i-width)){
-                    bNumber ++;
-                } if (bombs.includes(i-width+1)){
-                    bNumber ++;
-                } if (bombs.includes(i+1)){
-                    bNumber ++;
-                }
+
+                let bNumber = 0;
+                        if ( bombs.includes(i-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width+1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+1)){
+                            bNumber ++;
+                        }
+
+                        const cell = document.getElementById(i);
+                        cell.innerHTML = bNumber;
+                        addNumberStyle(bNumber);
+
 
             // compare with 8 neighbours
             }else{
 
-                if ( bombs.includes(i-width-1)){
-                    bNumber ++;
-                } if (bombs.includes(i-width)){
-                    bNumber ++;
-                } if (bombs.includes(i-width+1)){
-                    bNumber ++;
-                } if (bombs.includes(i-1)){
-                    bNumber ++;
-                } if (bombs.includes(i+1)){
-                    bNumber ++;
-                } if ( bombs.includes(i+width-1)){
-                    bNumber ++;
-                } if (bombs.includes(i+width)){
-                    bNumber ++;
-                } if (bombs.includes(i+width+1)){
-                    bNumber ++;
-                }
+
+                let bNumber = 0;
+                        if ( bombs.includes(i-width-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width)){
+                            bNumber ++;
+                        } if (bombs.includes(i-width+1)){
+                            bNumber ++;
+                        } if (bombs.includes(i-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+1)){
+                            bNumber ++;
+                        } if ( bombs.includes(i+width-1)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width)){
+                            bNumber ++;
+                        } if (bombs.includes(i+width+1)){
+                            bNumber ++;
+                        }
+
+                        const cell = document.getElementById(i);
+                        cell.innerHTML = bNumber;
+                        addNumberStyle(bNumber);
+
 
             }
         }
 
-        const cell = document.getElementById(i);
-        cell.innerHTML = bNumber;
-        addNumberStyle(bNumber);
-
-
-        // cells[i].setAttribute ("data", bNumber);
-        // let ali = cells.getAttribure ("data");
-        // console.log ("data", ali);
 
     }
 
@@ -304,14 +345,14 @@ function checkNeighbours(){
 }
 
 
-// checkNeighbours();
+checkNeighbours();
 
 
 
 
 function addNumberStyle(t){
     if (t == 0){
-        // cell.classList.add('.zero');
+        cell.classList.add('.zero');
     } if (t == 1){
         cell.classList.add('.one');
         // console.log("class one")
