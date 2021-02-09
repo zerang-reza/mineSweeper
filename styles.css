@@ -1,0 +1,167 @@
+.board{
+    height: 500px;
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #14c4ca;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center;
+
+}
+
+.board div {
+    height: 18px;
+    width: 18px;
+    /* background-color: blue; */
+    /* font-size: medium; */
+    font-size: medium;
+    text-align: center;
+
+    font-family: 'Oswald', sans-serif;
+    /* font-family: 'Anton', sans-serif; */
+    font-weight:700;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #7c7c7c;
+}
+
+
+/* .header {
+  font-family: 'Orbitron', sans-serif;
+
+  height: 40px;
+    width: 1000px;
+
+    text-align: center;
+    align-items: center;
+
+    display:flex;
+
+    background-color: #b4b4b4;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 0.5em;
+    font-size: 2em;
+    font-weight: bold;
+    align-content: center;
+    
+} */
+
+.continer {
+  width: 970px;
+  border: 5px solid rgb(111,41,97);
+  border-radius: .5em;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timer {
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  background-color: rgba(111,41,97,.3);
+  border: 2px solid rgba(111,41,97,.5);
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+
+}
+
+
+.flags {
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  background-color: rgba(111,41,97,.3);
+  border: 2px solid rgba(111,41,97,.5);
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+
+}
+
+
+.reset {
+  width: 100px;
+  height: 40px;
+  /* padding: 10px; */
+  /* background-color: rgba(111,41,97,.3);
+  border: 2px solid rgba(111,41,97,.5); */
+  text-align: center;
+  /* font-family: 'Orbitron', sans-serif; */
+  font-size: 1em;
+
+}
+
+
+
+
+.bomb {
+  background-color: #bababa;
+    text-align: center;
+    font-size: medium;
+}
+
+
+
+.zero {
+  background-color: #bababa;
+}
+
+
+  .one {
+    color: #0004f5;
+    background-color: #bababa;
+  }
+  
+  .two {
+    color: #007d19;
+    background-color: #bababa;
+  }
+  
+  .three {
+    color: #ff0000;
+    background-color: #bababa;
+  }
+  
+  .four {
+    color:#00017b;
+    background-color: #bababa;
+  }
+  
+  .five {
+    color: #8c0000;
+    background-color: #bababa;
+  }
+
+  
+  .six{
+    color: #007e7f;
+    background-color: #bababa;
+  }
+
+  
+  .seven{
+    color: #000000;
+    background-color: #bababa;
+  }
+
+  
+  .eight{
+    color: #7c7c7c;
+    background-color: #bababa;
+  }
+
+
+  .nine{
+    color: #7c7c7c;
+    background-color: #ff0000;
+  }
